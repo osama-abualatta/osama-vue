@@ -1,0 +1,9 @@
+#ex-class-bind{
+    color:red;
+}
+.active{
+    background-color: blueviolet;
+}
+.classObject{
+    background-color: #333;
+}

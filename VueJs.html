@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Vuejs</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1> {{message}}</h1>
+        </div> 
+        <div id="app-2">
+            <span v-bind:title="message">
+              Hover your mouse over me for a few seconds
+              to see my dynamically bound title!
+            </span>
+          </div>
+          <div id="app-3">
+            <span v-if="seen">Now you see me</span>
+          </div>
+          <div id="app-4">
+            <ol>
+              <li v-for="todo in todos">
+                {{ todo.text }}
+              </li>
+            </ol>
+          </div> 
+
+
+         ******************* Handling User Input***************
+         
+         
+         <div id="app-5">
+            <p>{{ message }}</p>
+            <button v-on:click="reverseMessage">Reverse Message</button>
+          </div>
+
+          <div id="app-6">
+            <p>{{ message }}</p>
+            <input v-model="message">
+          </div>
+
+          
+          **********************       Computed Properties        ********************
+          
+          
+          <div id="example">
+            <p>Original message: "{{ message }}"</p>
+            <p>Computed reversed message: "{{ reversedMessage }}"</p>
+          </div>
+
+
+          ****************          Computed vs Watched Property         **********
+
+          <div id="demo">{{ fullName }}</div>
+
+          ****************                     Watchers          ******************* 
+          <div id="watch-example">
+            <p>
+              Ask a yes/no question:
+              <input v-model="question">
+            </p>
+            <p>{{ answer }}</p>
+          </div>
+
+            ************************    Class and Style Bindings     *********************
+                                 ***  1  ***
+            <div id="ex-class-bind" v-bind:class="{ active: isActive ,'text-danger': hasError  }">
+                <h2> class and style bindings 1 </h2>
+            </div>
+                                 ***  2  ***
+             <div id="ex-class-bind2" v-bind:class="classObject">
+                <h2> class and style bindings 2 </h2>
+                                </div>  
+                                 *** 3 Array syntax ***
+             <div id="ex-class-bind3" v-bind:class="[isActive ? activeClass : '', errorClass]">
+                <h2> class and style bindings [array] </h2>
+             </div>   
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="main.js"></script>
+      
+    </body>
+</html>
